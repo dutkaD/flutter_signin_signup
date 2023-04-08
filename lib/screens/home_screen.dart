@@ -5,10 +5,8 @@ class HomePageScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        body: SafeArea(
+    return const SafeArea(
             child: Text("Home page")
-        )
-    );
+        );
   }
 }

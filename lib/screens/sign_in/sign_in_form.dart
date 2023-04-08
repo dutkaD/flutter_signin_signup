@@ -4,7 +4,8 @@ import '../../common/forms/text_field_rounded.dart';
 import '../../common/rounded_button.dart';
 
 class SignInForm extends StatefulWidget {
-  const SignInForm({Key? key}) : super(key: key);
+  final Function onSignUp;
+  const SignInForm({Key? key, required this.onSignUp}) : super(key: key);
 
   @override
   _SignInFormState createState() => _SignInFormState();
@@ -37,7 +38,7 @@ class _SignInFormState extends State<SignInForm> {
               },
             ),
             RoundedButton(
-              onPressed: () {},
+              onPressed: widget.onSignUp,
               label: "Sign in",
             )
           ],

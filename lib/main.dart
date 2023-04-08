@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:login_app/app_wrapper.dart';
 import 'package:login_app/screens/auth_wrapper.dart';
-import 'package:login_app/screens/sign_in/sign_in_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'bloc/app_user_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +15,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: mycolor,
-          fontFamily: GoogleFonts.raleway().fontFamily,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AppUserBloc>(
+          create: (BuildContext context) => AppUserBloc(),
         ),
-        home: const AuthWrapper());
+        BlocProvider<AppUserBloc>(
+          create: (BuildContext context) => AppUserBloc(),
+        )
+      ],
+      child: MaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            primarySwatch: mycolor,
+            fontFamily: GoogleFonts.raleway().fontFamily,
+          ),
+          home: const AppWrapper()),
+    );
   }
 }
 

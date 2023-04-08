@@ -21,13 +21,11 @@ class _AuthWrapperState extends State<AuthWrapper> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 350),
-        child: showSignIn
-            ? SignInScreen(onToggle: toggleView)
-            : SignUpScreen(onToggle: toggleView),
-      ),
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 350),
+      child: showSignIn
+          ? SignInScreen(onToggle: toggleView)
+          : SignUpScreen(onToggle: toggleView),
     );
   }
 }
