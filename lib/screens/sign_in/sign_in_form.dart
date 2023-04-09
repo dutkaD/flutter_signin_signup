@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
+import 'package:login_app/common/app_localisations.dart';
 
 import '../../common/forms/text_field_rounded.dart';
 import '../../common/rounded_button.dart';
 
 class SignInForm extends StatefulWidget {
   final Function onSignUp;
+
   const SignInForm({Key? key, required this.onSignUp}) : super(key: key);
 
   @override
@@ -20,26 +22,28 @@ const headerStyle = TextStyle(
 class _SignInFormState extends State<SignInForm> {
   @override
   Widget build(BuildContext context) {
+    var locals = getAppLocalizations(context);
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Column(
           children: [
             TextFieldRounded(
-              hintText: "Email",
+              hintText: locals?.emailFormLabel ?? "Email",
               onChanged: (String value) {
                 print(value);
               },
             ),
             TextFieldRounded(
-              hintText: "Password",
+              hintText: locals?.passwordFormLabel ?? "Password",
               onChanged: (String value) {
                 print(value);
               },
             ),
             RoundedButton(
               onPressed: widget.onSignUp,
-              label: "Sign in",
+              label: locals?.signInButtonLabel ?? "Sign in",
             )
           ],
         )

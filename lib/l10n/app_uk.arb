@@ -1,0 +1,12 @@
+{
+    "emailFormLabel": "Email",
+    "nameFormLabel" : "Ім`я",
+    "passwordFormLabel": "Пароль",
+    "signInButtonLabel": "Увійти",
+    "signUpButtonLabel": "Створити аккаунт",
+    "createUserLinkLabel": "Створити новий аккаунт",
+    "alreadeHaveAccountLinkLabel": "У меня вже є аккаунт",
+    "signInHeader": "Увійти",
+    "createNewUserHeader": "Створити новий аккаунт"
+
+}
