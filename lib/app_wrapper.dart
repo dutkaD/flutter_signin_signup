@@ -12,6 +12,8 @@ class AppWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<AppUserBloc>().updateUser(AppUserState("Diana"));
+
     return BlocBuilder<AppUserBloc, AppUserState>(
       builder: (context, state) {
         return Scaffold(

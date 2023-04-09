@@ -18,3 +18,5 @@ const homeScreenTitleStyle = TextStyle(
     fontSize: 25,
     color: darkishRed
 );
+
+const dirtyGold = Color.fromRGBO(226, 188, 123, 0.5);

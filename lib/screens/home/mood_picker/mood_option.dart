@@ -1,26 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:login_app/style/style_variables.dart';
 
 class MoodOption extends StatelessWidget {
-  const MoodOption({Key? key}) : super(key: key);
+  final String label;
+  final double height;
+  final double width;
+  final Function onTap;
+  final EdgeInsets? margin;
+
+  const MoodOption({Key? key, required this.label, this.margin, this.height = 55.0, this.width = 100.0, required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      width: 100,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(25),
-        color: Colors.yellow,
-      ),
+    return GestureDetector(
+      onTap: (){},
       child: Container(
-        padding: EdgeInsets.all(30.0),
+        margin: margin ?? const EdgeInsets.symmetric(vertical: 2.0, horizontal: 3.0),
+        height: height,
+        width: width,
         decoration: BoxDecoration(
-          color: Colors.yellow,
-          image: DecorationImage(
-            opacity: 0.2,
-            image: AssetImage("assets/content.png"),
-            fit: BoxFit.cover,
-          ),
+          borderRadius: BorderRadius.circular(25),
+          color: dirtyGold,
+        ),
+        child: Center(
+          child: Text(label),
         ),
       ),
     );

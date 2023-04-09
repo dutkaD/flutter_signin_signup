@@ -3,15 +3,31 @@ import 'package:flutter/cupertino.dart';
 import 'mood_option.dart';
 
 class MoodPicker extends StatelessWidget {
-  const MoodPicker({Key? key}) : super(key: key);
+  final Function onMoodPicked;
+
+  const MoodPicker({Key? key, required this.onMoodPicked}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50.0),
+      padding: const EdgeInsets.symmetric(horizontal: 35.0),
       child: Row(
-        children: const [
-          MoodOption()
+        children: [
+          Expanded(
+              child: MoodOption(
+            label: "GOOD",
+            onTap: () {},
+          )),
+          Expanded(
+              child: MoodOption(
+            label: "OK",
+            onTap: () {},
+          )),
+          Expanded(
+              child: MoodOption(
+            label: "Ugh",
+            onTap: () {},
+          )),
         ],
       ),
     );
