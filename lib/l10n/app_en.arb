@@ -1,0 +1,12 @@
+{
+  "emailFormLabel": "Email",
+  "nameFormLabel" : "Name",
+  "passwordFormLabel": "Password",
+  "signInButtonLabel": "Sign in",
+  "signUpButtonLabel": "Register",
+  "createUserLinkLabel": "Create a new user",
+  "alreadeHaveAccountLinkLabel": "I already have an account",
+  "signInHeader": "Sing in",
+  "createNewUserHeader": "Create a new user"
+
+}

@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 
+import '../../common/app_localisations.dart';
 import '../../common/forms/text_field_rounded.dart';
 
 class SignUpForm extends StatefulWidget {
@@ -14,24 +15,27 @@ class SignUpForm extends StatefulWidget {
 class _SignUpFormState extends State<SignUpForm> {
   @override
   Widget build(BuildContext context) {
+    var locals = getAppLocalizations(context);
+
+
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
           TextFieldRounded(
-            hintText: "Name",
+            hintText: locals?.nameFormLabel ?? "Name",
             onChanged: (String value) {
               print(value);
             },
           ),
           TextFieldRounded(
-            hintText: "Email",
+            hintText: locals?.emailFormLabel ?? "Email",
             onChanged: (String value) {
               print(value);
             },
           ),
           TextFieldRounded(
-            hintText: "Password",
+            hintText: locals?.passwordFormLabel ?? "Password",
             onChanged: (String value) {
               print(value);
             },
