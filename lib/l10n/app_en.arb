@@ -7,6 +7,13 @@
   "createUserLinkLabel": "Create a new user",
   "alreadeHaveAccountLinkLabel": "I already have an account",
   "signInHeader": "Sing in",
-  "createNewUserHeader": "Create a new user"
+  "createNewUserHeader": "Create a new user",
+
+
+  "emailMalformedError" : "This email address is invalid",
+  "passwordNotGoodError": "Password should be longer than 6 characters",
+  "passwordCantBeEmptyError": "Password can''t be empty",
+  "emailCantBeEmptyError": "Email can't be empty",
+  "nameCantBeEmptyError": "Name can't be empty"
 
 }

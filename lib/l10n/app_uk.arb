@@ -7,6 +7,14 @@
     "createUserLinkLabel": "Створити новий аккаунт",
     "alreadeHaveAccountLinkLabel": "У меня вже є аккаунт",
     "signInHeader": "Увійти",
-    "createNewUserHeader": "Створити новий аккаунт"
+    "createNewUserHeader": "Створити новий аккаунт",
+
+
+
+    "emailMalformedError" : "Неправильна email адреса",
+    "passwordNotGoodError": "Пароль має бути не менше 6 знаків",
+    "passwordCantBeEmptyError": "Введіть пароль",
+    "emailCantBeEmptyError": "Email адреса не може бути пустою",
+    "nameCantBeEmptyError": "Ім`я не може бути пустим"
 
 }

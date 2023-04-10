@@ -20,34 +20,51 @@ const headerStyle = TextStyle(
 );
 
 class _SignInFormState extends State<SignInForm> {
+  final _formKey = GlobalKey<FormState>();
+
+  String email = "";
+  String password = "";
+
   @override
   Widget build(BuildContext context) {
     var locals = getAppLocalizations(context);
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Column(
-          children: [
-            TextFieldRounded(
-              hintText: locals?.emailFormLabel ?? "Email",
-              onChanged: (String value) {
-                print(value);
-              },
-            ),
-            TextFieldRounded(
-              hintText: locals?.passwordFormLabel ?? "Password",
-              onChanged: (String value) {
-                print(value);
-              },
-            ),
-            RoundedButton(
-              onPressed: widget.onSignUp,
-              label: locals?.signInButtonLabel ?? "Sign in",
-            )
-          ],
-        )
-      ],
+    return Form(
+      key: _formKey,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Column(
+            children: [
+              TextFieldRounded(
+                hintText: locals?.emailFormLabel ?? "Email",
+                onChanged: (String value) {
+                  setState(() {
+                    email = value;
+                  });
+                },
+              ),
+              TextFieldRounded(
+                hintText: locals?.passwordFormLabel ?? "Password",
+                hideText: true,
+                onChanged: (String value) {
+                  setState(() {
+                    password = value;
+                  });
+                },
+              ),
+              RoundedButton(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    widget.onSignUp();
+                  }
+                },
+                label: locals?.signInButtonLabel ?? "Sign in",
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
 }
