@@ -14,16 +14,20 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-
   @override
   Widget build(BuildContext context) {
     var locals = getAppLocalizations(context);
 
     return AuthScreen(
-        toggleLabel: locals?.alreadeHaveAccountLinkLabel ?? "I already have an account",
+        toggleLabel:
+            locals?.alreadeHaveAccountLinkLabel ?? "I already have an account",
         headerText: locals?.createNewUserHeader ?? "Create a new user",
         backgroundImage: const AssetImage('assets/flowers_red.png'),
-        form: const SignUpForm(),
+        form: SignUpForm(
+          onSignUp: () {
+            print("Signing up!");
+          },
+        ),
         onToggle: widget.onToggle);
   }
 }

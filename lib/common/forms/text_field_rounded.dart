@@ -25,7 +25,7 @@ class TextFieldRounded extends StatelessWidget {
         },
         validator: (value) {
           if (validate != null) {
-            validate!(value);
+            return validate!(value);
           }
         },
 

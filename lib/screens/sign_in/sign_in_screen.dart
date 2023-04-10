@@ -33,7 +33,7 @@ class _SignInScreenState extends State<SignInScreen> {
     return AuthScreen(
       backgroundImage: const AssetImage('assets/flowers.png'),
       form: SignInForm(
-        onSignUp: signUserIn,
+        onSignIn: signUserIn,
       ),
       onToggle: widget.onToggle,
       headerText: locals?.signInHeader ?? "Sign in",
