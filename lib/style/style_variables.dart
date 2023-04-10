@@ -15,7 +15,13 @@ const textStyle = TextStyle(
 const toggleLabelStyle = TextStyle(fontWeight: FontWeight.bold, color: darkishRed);
 
 const homeScreenTitleStyle = TextStyle(
-    fontSize: 25,
+    fontSize: 12,
+    color: darkishRed
+);
+
+
+const optionStyle = TextStyle(
+    fontSize: 11,
     color: darkishRed
 );
 
