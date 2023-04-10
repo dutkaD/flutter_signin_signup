@@ -39,7 +39,7 @@ class _SignInFormState extends State<SignInForm> {
               TextFieldRounded(
                 hintText: locals?.emailFormLabel ?? "Email",
                 validate: (String value) {
-                  if (value.contains("@") || value.length < 3) {
+                  if (!value.contains("@") || value.length < 3) {
                     return locals?.emailMalformedError ?? "Email is not correct";
                   }
                 },
