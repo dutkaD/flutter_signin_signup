@@ -11,6 +11,7 @@ class MoodPicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text(
           "How are you doing today?",
