@@ -15,6 +15,16 @@
     "passwordNotGoodError": "Пароль має бути не менше 6 знаків",
     "passwordCantBeEmptyError": "Введіть пароль",
     "emailCantBeEmptyError": "Email адреса не може бути пустою",
-    "nameCantBeEmptyError": "Ім`я не може бути пустим"
+    "nameCantBeEmptyError": "Ім`я не може бути пустим",
+
+
+    "dashboardScoreLabel": "Mої бали",
+    "dashboardSeeScoreHistory": "більше",
+
+    "quoteNoTreatsYet": "Здається у тебя ще не заплановано жодної втіхи. Чим хотілось би себе побалувати?",
+    "randomQuestionHowAreYou": "Як у тебе справи сьогодні?",
+    "answerGood": "Добре",
+    "answerOk": "Більш-менш",
+    "answerUgh": "Кепсько"
 
 }

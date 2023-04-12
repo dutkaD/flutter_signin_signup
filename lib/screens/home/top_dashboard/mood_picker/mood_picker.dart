@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../style/style_variables.dart';
+import '../../../../style/style_variables.dart';
 import 'mood_option.dart';
 
 class MoodPicker extends StatelessWidget {

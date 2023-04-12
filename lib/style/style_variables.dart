@@ -25,4 +25,5 @@ const optionStyle = TextStyle(
     color: darkishRed
 );
 
-const dirtyGold = Color.fromRGBO(226, 188, 123, 0.5);
+const sandyGold = Color.fromRGBO(226, 188, 123, 0.5);
+const dustyGold = Color.fromRGBO(170, 155, 125, 0.5019607843137255);

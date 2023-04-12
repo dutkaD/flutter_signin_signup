@@ -14,6 +14,21 @@
   "passwordNotGoodError": "Password should be longer than 6 characters",
   "passwordCantBeEmptyError": "Password can''t be empty",
   "emailCantBeEmptyError": "Email can't be empty",
-  "nameCantBeEmptyError": "Name can't be empty"
+  "nameCantBeEmptyError": "Name can't be empty",
+
+  "dashboardScoreLabel": "My score",
+  "dashboardSeeScoreHistory": "see history",
+
+  "quoteNoTreatsYet": "Seems like you haven't planned any treats yet. Anything you would want to do more often?",
+  "randomQuestionHowAreYou": "How are you doing today?",
+  "answerGood": "GOOD",
+  "answerOk": "OK",
+  "answerUgh": "Ugh",
+
+  "treatsMonthlyLabel": "Monthly treats",
+  "treatsMonthlyLetsAdd": "Let's add a monthly treat",
+  "treatsYearlyLabel": "Yearly treats",
+  "treatsYearlyLetsAdd": "Let's add a yearly treat",
+
 
 }

@@ -20,7 +20,7 @@ class MoodOption extends StatelessWidget {
         height: height,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(25),
-          color: dirtyGold,
+          color: sandyGold,
         ),
         child: Center(
           child: Text(label,
