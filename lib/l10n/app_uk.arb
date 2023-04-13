@@ -21,10 +21,18 @@
     "dashboardScoreLabel": "Mої бали",
     "dashboardSeeScoreHistory": "більше",
 
-    "quoteNoTreatsYet": "Здається у тебя ще не заплановано жодної втіхи. Чим хотілось би себе побалувати?",
+
+    "quoteNoTreatsYet": "Здається, ви ще не запланували чим себе побалувати?",
     "randomQuestionHowAreYou": "Як у тебе справи сьогодні?",
     "answerGood": "Добре",
     "answerOk": "Більш-менш",
-    "answerUgh": "Кепсько"
+    "answerUgh": "Кепсько",
+
+    "recentTreats": "Останні забаганки",
+
+    "treatsMonthlyLabel": "Балувати себе чимось раз на місяць",
+    "treatsMonthlyLetsAdd": "Додамо-но щось хороше?",
+    "treatsYearlyLabel": "Балувати себе чимось раз на рік",
+    "treatsYearlyLetsAdd": "Додамо-но щось хороше?"
 
 }

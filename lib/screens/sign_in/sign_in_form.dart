@@ -13,12 +13,6 @@ class SignInForm extends StatefulWidget {
   _SignInFormState createState() => _SignInFormState();
 }
 
-const headerStyle = TextStyle(
-  fontSize: 23,
-  fontWeight: FontWeight.bold,
-  color: Color.fromRGBO(104, 65, 0, 1.0),
-);
-
 class _SignInFormState extends State<SignInForm> {
   final _formKey = GlobalKey<FormState>();
 

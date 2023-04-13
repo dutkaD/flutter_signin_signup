@@ -14,25 +14,26 @@ class TreatsOverview extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
-        height: 150,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              child: TreatOverviewTile(
-                headerText: 'Monthly treats',
-                mainText: "Let's add a monthly treats",
-                onButtonClicked: (){},
+        child: IntrinsicHeight(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                child: TreatOverviewTile(
+                  headerText: locals?.treatsYearlyLabel ?? 'Monthly treats',
+                  mainText: locals?.treatsYearlyLetsAdd ?? "Let's add a monthly treats",
+                  onButtonClicked: (){},
+                ),
               ),
-            ),
-            Expanded(
-              child: TreatOverviewTile(
-                headerText: 'Yearly treats',
-                mainText: "Let's a yearly treat",
-                onButtonClicked: (){},
-              ),
-            )
-          ],
+              Expanded(
+                child: TreatOverviewTile(
+                  headerText: locals?.treatsMonthlyLabel ?? 'Yearly treats',
+                  mainText: locals?.treatsMonthlyLetsAdd ?? "Let's a yearly treat",
+                  onButtonClicked: (){},
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

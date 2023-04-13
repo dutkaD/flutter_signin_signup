@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_app/bloc/app_user_state.dart';
 import 'package:login_app/screens/home/random_bit/quote_widget.dart';
+import 'package:login_app/screens/home/recent_activity/recent_activity_list.dart';
 import 'package:login_app/screens/home/top_dashboard/top_dashboard.dart';
-import 'package:login_app/screens/home/treats_overview/treat_overview_tile.dart';
 import 'package:login_app/screens/home/treats_overview/treats_overview.dart';
 
 import '../../bloc/app_user_bloc.dart';
@@ -15,8 +15,7 @@ class HomePageScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AppUserBloc, AppUserState>(
       builder: (context, userstate) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
+        return SafeArea(
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
@@ -25,13 +24,16 @@ class HomePageScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            child: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: const [
                   TopDashboard(),
                   RandomQuote(),
-                  TreatsOverview()
+                  TreatsOverview(),
+                  RecentActivityList()
+
 
                 ],
               ),

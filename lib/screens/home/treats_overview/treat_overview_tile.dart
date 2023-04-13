@@ -34,7 +34,6 @@ class TreatOverviewTile extends StatelessWidget {
                   Text(
                     headerText,
                     style: const TextStyle(fontWeight: FontWeight.bold),
-
                   ),
                   Text(
                     mainText,
@@ -42,7 +41,10 @@ class TreatOverviewTile extends StatelessWidget {
                   ),
                 ],
               ),
-              RoundedButton(onPressed: () {}, label: "+")
+              CircleButton(
+                onTap: (){},
+                child: Text("+"),
+              )
             ],
           )),
     );

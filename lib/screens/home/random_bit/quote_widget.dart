@@ -17,19 +17,26 @@ class RandomQuote extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 18.0, horizontal: 8),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Column(
           children: [
-            Image(
-              height: 50,
-              image: AssetImage('assets/cat.png'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
             ),
-            Flexible(
-                child: Text(
-              locals?.quoteNoTreatsYet ??
-                  "Seems like you haven't planned any treats for you yet",
-              textAlign: TextAlign.center,
-            ))
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Image(
+                  height: 50,
+                  image: AssetImage('assets/cat.png'),
+                ),
+                Flexible(
+                    child: Text(
+                  locals?.quoteNoTreatsYet ??
+                      "Seems like you haven't planned any treats for you yet",
+                  textAlign: TextAlign.center,
+                ))
+              ],
+            ),
           ],
         ),
       ),

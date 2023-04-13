@@ -25,10 +25,12 @@
   "answerOk": "OK",
   "answerUgh": "Ugh",
 
+  "recentTreats": "Recent treats",
+
   "treatsMonthlyLabel": "Monthly treats",
   "treatsMonthlyLetsAdd": "Let's add a monthly treat",
   "treatsYearlyLabel": "Yearly treats",
-  "treatsYearlyLetsAdd": "Let's add a yearly treat",
+  "treatsYearlyLetsAdd": "Let's add a yearly treat"
 
 
 }

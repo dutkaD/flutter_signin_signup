@@ -24,7 +24,8 @@ class MoodOption extends StatelessWidget {
         ),
         child: Center(
           child: Text(label,
-          style: optionStyle,),
+          style: optionStyle,
+          textAlign: TextAlign.center,),
         ),
       ),
     );

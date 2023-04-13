@@ -19,6 +19,11 @@ const homeScreenTitleStyle = TextStyle(
     color: darkishRed
 );
 
+const headerStyle = TextStyle(
+    fontSize: 18,
+    color: darkishRed
+);
+
 
 const optionStyle = TextStyle(
     fontSize: 11,

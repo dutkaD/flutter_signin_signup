@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
+import '../../../../common/app_localisations.dart';
 import '../../../../style/style_variables.dart';
 import 'mood_option.dart';
 
@@ -10,32 +11,37 @@ class MoodPicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var locals = getAppLocalizations(context);
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
-          "How are you doing today?",
+         Text(
+          locals?.randomQuestionHowAreYou ?? "How are you doing today?",
           textAlign: TextAlign.center,
           style: homeScreenTitleStyle,
         ),
-        Row(
-          children: [
-            Expanded(
-                child: MoodOption(
-              label: "GOOD",
-              onTap: () {},
-            )),
-            Expanded(
-                child: MoodOption(
-              label: "OK",
-              onTap: () {},
-            )),
-            Expanded(
-                child: MoodOption(
-              label: "Ugh",
-              onTap: () {},
-            )),
-          ],
+        Padding(
+          padding: const EdgeInsets.only(top: 10.0),
+          child: Row(
+            children: [
+              Expanded(
+                  child: MoodOption(
+                label: locals?.answerGood ?? "GOOD",
+                onTap: () {},
+              )),
+              Expanded(
+                  child: MoodOption(
+                label: locals?.answerOk ?? "OK",
+                onTap: () {},
+              )),
+              Expanded(
+                  child: MoodOption(
+                label: locals?.answerUgh ?? "Ugh",
+                onTap: () {},
+              )),
+            ],
+          ),
         ),
       ],
     );
