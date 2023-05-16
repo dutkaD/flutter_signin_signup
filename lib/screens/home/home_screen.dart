@@ -26,16 +26,18 @@ class HomePageScreen extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: const [
-                  TopDashboard(),
-                  RandomQuote(),
-                  TreatsOverview(),
-                  RecentActivityList()
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: const [
+                    TopDashboard(),
+                    RandomQuote(),
+                    TreatsOverview(),
+                    RecentActivityList()
 
 
-                ],
+                  ],
+                ),
               ),
             ),
           ),
