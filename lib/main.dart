@@ -4,10 +4,15 @@ import 'package:login_app/app_wrapper.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-import 'bloc/app_user_bloc.dart';
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
-void main() {
   runApp(const MyApp());
 }
 
@@ -16,34 +21,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<AppUserBloc>(
-          create: (BuildContext context) => AppUserBloc(),
+    return MaterialApp(
+        title: 'Flutter Demo',
+        localizationsDelegates: const [
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: const [
+          Locale('en'),
+          Locale('uk'),
+        ],
+        locale: const Locale('uk'),
+        theme: ThemeData(
+          primarySwatch: mycolor,
+          fontFamily: GoogleFonts.raleway().fontFamily,
         ),
-        BlocProvider<AppUserBloc>(
-          create: (BuildContext context) => AppUserBloc(),
-        )
-      ],
-      child: MaterialApp(
-          title: 'Flutter Demo',
-          localizationsDelegates: const [
-            AppLocalizations.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: const [
-            Locale('en'),
-            Locale('uk'),
-          ],
-          locale: Locale('uk'),
-          theme: ThemeData(
-            primarySwatch: mycolor,
-            fontFamily: GoogleFonts.raleway().fontFamily,
-          ),
-          home: const AppWrapper()),
-    );
+        home: const AppWrapper());
   }
 }
 

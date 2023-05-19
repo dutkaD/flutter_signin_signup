@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:login_app/bloc/app_user_bloc.dart';
-import 'package:login_app/bloc/app_user_state.dart';
 import 'package:login_app/screens/auth_screen.dart';
 import 'package:login_app/screens/sign_in/sign_in_form.dart';
 
@@ -23,7 +20,6 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreenState extends State<SignInScreen> {
 
   void signUserIn(){
-    context.read<AppUserBloc>().updateUser(AppUserState("Diana"));
   }
 
   @override

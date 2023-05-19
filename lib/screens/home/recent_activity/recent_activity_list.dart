@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/common/app_localisations.dart';
 import 'package:login_app/common/rounded_button.dart';
+import 'package:login_app/firestore/listeners.dart';
 
 import '../../../style/style_variables.dart';
-import 'activity_card.dart';
+import 'event_list.dart';
 
 class RecentActivityList extends StatelessWidget {
   const RecentActivityList({Key? key}) : super(key: key);
@@ -19,23 +20,33 @@ class RecentActivityList extends StatelessWidget {
           children: [
             Text(locals?.recentTreats ?? "Recent treats", style: headerStyle),
             CircleButton(
-              onTap: () {},
+              onTap: () {
+                addTreat();
+              },
               child: const Text("+"),
+            ),
+            CircleButton(
+              onTap: () {
+                // updateUser  updateUser();
+              },
+              child: const Text("!!!"),
             )
           ],
         ),
-        Column(
-          children: [
-            ActivityCard(
-              header: "Take a bath",
-              subheader: "yesterday",
-              onTap: () {},
-              icon: const Icon(
-                Icons.bathtub,
-              ),
-            )
-          ],
-        )
+        EventList()
+
+        // Column(
+        //   children: [
+        //     ActivityCard(
+        //       header: "Take a bath",
+        //       subheader: "yesterday",
+        //       onTap: () {},
+        //       icon: const Icon(
+        //         Icons.bathtub,
+        //       ),
+        //     )
+        //   ],
+        // )
       ],
     );
   }
