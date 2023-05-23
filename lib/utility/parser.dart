@@ -5,3 +5,9 @@ String dateToMonthId(){
   final format = DateFormat('yyyyMM');
   return format.format(now);
 }
+
+String getMonthAsString(){
+  DateTime now = DateTime.now();
+  DateFormat format = new DateFormat("MMMM");
+  return format.format(now);
+}

@@ -32,7 +32,7 @@ class HomePageScreen extends StatelessWidget {
                 CurrentStats(),
                 TreatsOverview(),
                 // RecentActivityList(),
-                CurrentStats()
+
               ],
             ),
           ),

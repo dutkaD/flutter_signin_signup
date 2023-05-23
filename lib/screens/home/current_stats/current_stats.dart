@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:login_app/firestore/listeners.dart';
 import 'package:login_app/firestore/model/checked_in_treat.dart';
 import 'package:login_app/firestore/model/planned_treat.dart';
+import 'package:login_app/utility/parser.dart';
 
 class CurrentStats extends StatefulWidget {
   const CurrentStats({Key? key}) : super(key: key);
@@ -29,6 +30,16 @@ class _CurrentStatsState extends State<CurrentStats> {
             return Text(plannedSnapshot.connectionState.name);
           }
 
+          List<PlannedTreat> planned = plannedSnapshot.data!.docs
+              .map((DocumentSnapshot document) {
+                return PlannedTreat.fromResponse(
+                    document.id, document.data()! as Map<String, dynamic>);
+              })
+              .toList()
+              .cast();
+          final total = planned.fold<num>(
+              0, (sum, item) => sum + (item.treatPlannedTimes ?? 0));
+
           return StreamBuilder<QuerySnapshot>(
             stream: checkedIn,
             builder:
@@ -48,45 +59,32 @@ class _CurrentStatsState extends State<CurrentStats> {
                   .toList()
                   .cast();
 
-              return Row(
-                children: [
-                  Expanded(
-                    child: Column(
-                      children: [
-                        ListView(
-                            shrinkWrap: true,
-                            children: checkedIn
-                                .map((e) => ListTile(
-                                      title: Text(e.plannedTreatId ?? ""),
-                                      subtitle:
-                                          Text(e.checkedInDate.toString()),
-                                    ))
-                                .toList()),
-                      ],
-                    ),
+              return Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8.0),
                   ),
-                  Expanded(
-                    child: Column(
-                      children: [
-                        ListView(
-                          shrinkWrap: true,
-                          children: plannedSnapshot.data!.docs
-                              .map((DocumentSnapshot document) {
-                                PlannedTreat data = PlannedTreat.fromResponse(
-                                    document.id,
-                                    document.data()! as Map<String, dynamic>);
-                                return ListTile(
-                                  title: Text(data.treatTitle ?? ""),
-                                  subtitle: Text(data.startMonthId ?? ""),
-                                );
-                              })
-                              .toList()
-                              .cast(),
-                        ),
-                      ],
-                    ),
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 15.0, horizontal: 25.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            getMonthAsString().toUpperCase(),
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 18),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [Text("${checkedIn.length} out of ${total}")],
+                      )
+                    ],
                   ),
-                ],
+                ),
               );
             },
           );
