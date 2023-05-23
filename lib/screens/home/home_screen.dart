@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:login_app/screens/home/random_bit/quote_widget.dart';
-import 'package:login_app/screens/home/recent_activity/recent_activity_list.dart';
 import 'package:login_app/screens/home/top_dashboard/top_dashboard.dart';
 import 'package:login_app/screens/home/treats_overview/treats_overview.dart';
 
+import '../../utility/parser.dart';
+import 'current_stats/current_stats.dart';
 
 class HomePageScreen extends StatelessWidget {
   const HomePageScreen({Key? key}) : super(key: key);
@@ -24,11 +25,14 @@ class HomePageScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: const [
-                TopDashboard(),
-                RandomQuote(),
+              children: [
+                Text(dateToMonthId()),
+                const TopDashboard(),
+                const RandomQuote(),
+                CurrentStats(),
                 TreatsOverview(),
-                RecentActivityList()
+                // RecentActivityList(),
+                CurrentStats()
               ],
             ),
           ),

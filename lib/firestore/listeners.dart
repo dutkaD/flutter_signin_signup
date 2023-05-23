@@ -4,13 +4,33 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:login_app/firestore/model/treat.dart';
 import 'package:login_app/models/treat_category.dart';
 
+import '../utility/parser.dart';
+
 Stream<QuerySnapshot> streamEvents() {
   return FirebaseFirestore.instance.collection('treats').snapshots();
 }
 
-Future<void> addTreat() {
+Stream<QuerySnapshot> streamPlannedTreats() {
+  return FirebaseFirestore.instance
+      .collection('users')
+      .doc("1")
+      .collection("treat_planned")
+      .snapshots();
+}
 
-  TreatDto treatDto = TreatDto(null, "Default treat", "assets/treats/self-love.png", TreatCategory.other);
+Stream<QuerySnapshot> streamCheckedInTreats() {
+  return FirebaseFirestore.instance
+      .collection('users')
+      .doc("1")
+      .collection("treat_history")
+      .doc(dateToMonthId())
+      .collection("checked_in")
+      .snapshots();
+}
+
+Future<void> addTreat() {
+  TreatDto treatDto = TreatDto(null, "Default treat",
+      "assets/treats/self-love.png", TreatCategory.other);
   CollectionReference treats = FirebaseFirestore.instance.collection('treats');
   return treats
       .add(treatDto.toMap())
